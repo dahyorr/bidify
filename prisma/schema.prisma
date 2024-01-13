@@ -6,8 +6,9 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
-  url      = env("DATABASE_URL")
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
 }
 
 model User {
@@ -19,4 +20,32 @@ model User {
   birthday        String?
   createdAt       DateTime @default(now())
   updatedAt       DateTime @updatedAt
+  Items           Item[]
+  Bids            Bid[]
+}
+
+model Item {
+  id          String   @id @default(cuid())
+  name        String
+  description String?
+  minPrice    Float
+  imageUrl    String[]
+  categories  String[]
+  duration    Int
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  userId      String
+  User        User     @relation(fields: [userId], references: [id])
+  Bids        Bid[]
+}
+
+model Bid {
+  id        String   @id @default(cuid())
+  userId    String
+  itemId    String
+  bidAmount Float
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  User      User     @relation(fields: [userId], references: [id])
+  Item      Item     @relation(fields: [itemId], references: [id])
 }

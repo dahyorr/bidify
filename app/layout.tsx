@@ -4,7 +4,10 @@ import './globals.css'
 import Navbar from 'components/Navbar'
 import { ClerkProvider } from '@clerk/nextjs'
 import NextThemeProvider from '@/components/NextThemeProvider'
-const inter = Inter({ subsets: ['latin'] })
+import ReactQueryProvider from '@/components/ReactQueryProvider'
+
+
+const inter = Inter({ subsets: ['latin'], variable: "--font-sans", })
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -17,15 +20,19 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <ClerkProvider>
-        <html lang="en">
-          <body className={inter.className}>
+
+    <html lang="en">
+      <body className={inter.className}>
+        <ReactQueryProvider>
+          <ClerkProvider>
             <NextThemeProvider>
               <Navbar />
               {children}
             </NextThemeProvider>
-          </body>
-        </html>
-    </ClerkProvider>
+          </ClerkProvider>
+        </ReactQueryProvider>
+      </body>
+    </html>
+
   )
 }

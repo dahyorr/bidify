@@ -1,42 +1,78 @@
 {
   "data": {
+    "backup_code_enabled": false,
+    "banned": false,
     "birthday": "",
-    "created_at": 1654012591514,
+    "create_organization_enabled": true,
+    "created_at": 1699398706800,
+    "delete_self_enabled": true,
     "email_addresses": [
       {
-        "email_address": "example@example.org",
-        "id": "idn_29w83yL7CwVlJXylYLxcslromF1",
-        "linked_to": [],
+        "email_address": "dayoa89@gmail.com",
+        "id": "idn_2Xrso7HFqFRwUmeRyxV9TbnJrt5",
+        "linked_to": [
+          {
+            "id": "idn_2XrsoAUwRcax391KVHXgUHV7xYP",
+            "type": "oauth_google"
+          }
+        ],
         "object": "email_address",
+        "reserved": false,
         "verification": {
+          "attempts": null,
+          "expire_at": null,
           "status": "verified",
-          "strategy": "admin"
+          "strategy": "from_oauth_google"
         }
       }
     ],
-    "external_accounts": [],
+    "external_accounts": [
+      {
+        "approved_scopes": "email https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile openid profile",
+        "email_address": "dayoa89@gmail.com",
+        "family_name": "Adebanjo",
+        "given_name": "Dayo",
+        "google_id": "108297120583640961129",
+        "id": "idn_2XrsoAUwRcax391KVHXgUHV7xYP",
+        "label": null,
+        "object": "google_account",
+        "picture": "https://lh3.googleusercontent.com/a/ACg8ocJql-FCWCZoaAB1GZsR7essMxXcbjrSEzOQj5Cq7Ddrp8c=s1000-c",
+        "public_metadata": {},
+        "username": null,
+        "verification": {
+          "attempts": null,
+          "expire_at": 1699399299460,
+          "status": "verified",
+          "strategy": "oauth_google"
+        }
+      }
+    ],
     "external_id": null,
-    "first_name": "Example",
+    "first_name": "Dayo",
     "gender": "",
-    "id": "user_29w83sxmDNGwOuEthce5gg56FcC",
-    "image_url": "https://img.clerk.com/xxxxxx",
-    "last_name": null,
+    "has_image": true,
+    "id": "user_2XrsoPcIrgK2ZQifWgs8Y2m5SV2",
+    "image_url": "https://img.clerk.com/eyJ0eXBlIjoicHJveHkiLCJzcmMiOiJodHRwczovL2ltYWdlcy5jbGVyay5kZXYvb2F1dGhfZ29vZ2xlL2ltZ18yWHJzb0t5VGlIUGNDRXM0MkVCbnRNbkZZTFcifQ",
+    "last_name": "Adebanjo",
     "last_sign_in_at": null,
+    "locked": false,
     "object": "user",
-    "password_enabled": true,
+    "password_enabled": false,
     "phone_numbers": [],
-    "primary_email_address_id": "idn_29w83yL7CwVlJXylYLxcslromF1",
+    "primary_email_address_id": "idn_2Xrso7HFqFRwUmeRyxV9TbnJrt5",
     "primary_phone_number_id": null,
     "primary_web3_wallet_id": null,
     "private_metadata": {},
-    "profile_image_url": "https://www.gravatar.com/avatar?d=mp",
+    "profile_image_url": "https://images.clerk.dev/oauth_google/img_2XrsoKyTiHPcCEs42EBntMnFYLW",
     "public_metadata": {},
+    "saml_accounts": [],
+    "totp_enabled": false,
     "two_factor_enabled": false,
     "unsafe_metadata": {},
-    "updated_at": 1654012824306,
+    "updated_at": 1699398706841,
     "username": null,
     "web3_wallets": []
   },
   "object": "event",
-  "type": "user.updated"
+  "type": "user.created"
 }
